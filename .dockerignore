@@ -1,0 +1,15 @@
+.git
+.gitignore
+.gocache
+.edge-headless
+.vscode
+
+*.log
+*.err
+*.pid
+*.exe
+*.exe~
+
+login/configs/config.yaml
+login/data
+

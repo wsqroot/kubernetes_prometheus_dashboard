@@ -26,3 +26,19 @@ backend-supervisor.log
 backend-supervisor.pid
 backend-server.pid
 
+backend-keepalive.ps1
+backend-status.bat
+backend-status.ps1
+frontend-keepalive.ps1
+frontend-status.bat
+frontend-status.ps1
+run-backend-server.ps1
+run-frontend-server.ps1
+start-backend.bat
+start-backend.ps1
+start-frontend.bat
+start-frontend.ps1
+stop-backend.bat
+stop-backend.ps1
+stop-frontend.bat
+stop-frontend.ps1

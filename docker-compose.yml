@@ -1,0 +1,22 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: kubernetes-dashboard-backend
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./login/configs/config.yaml:/app/configs/config.yaml:ro
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: kubernetes-dashboard-frontend
+    ports:
+      - "8000:80"
+    depends_on:
+      - backend
+    restart: unless-stopped

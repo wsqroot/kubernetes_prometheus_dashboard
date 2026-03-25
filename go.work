@@ -1,0 +1,11 @@
+go 1.22.0
+
+use (
+	./load_kubeconfig
+	./login
+	./namespace
+	./worker_controller/daemonset
+	./worker_controller/deployment
+	./worker_controller/job
+	./worker_controller/statefulset
+)
