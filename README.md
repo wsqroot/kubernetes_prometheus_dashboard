@@ -1,2 +1,2 @@
 # kubernetes_prometheus_dashboard
-多集群管理
+第一版本：实现kubernetes多集群管理
