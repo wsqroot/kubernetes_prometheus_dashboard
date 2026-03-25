@@ -1,0 +1,38 @@
+server:
+  addr: ":8080"
+  read_timeout: 10s
+  write_timeout: 10s
+  idle_timeout: 60s
+
+mysql:
+  dsn: "root:password@tcp(127.0.0.1:3306)/login?charset=utf8mb4&parseTime=True&loc=Local"
+  max_open_conns: 20
+  max_idle_conns: 10
+  conn_max_lifetime: 30m
+
+kubeconfig_mysql:
+  admin_dsn: "root:password@tcp(127.0.0.1:3306)/?charset=utf8mb4&parseTime=True&loc=Local"
+  dsn: "root:password@tcp(127.0.0.1:3306)/kubeconfig?charset=utf8mb4&parseTime=True&loc=Local"
+  database: "kubeconfig"
+  max_open_conns: 20
+  max_idle_conns: 10
+  conn_max_lifetime: 30m
+
+auth:
+  user_lookup_sql: |
+    SELECT
+      u.id,
+      u.username,
+      p.password
+    FROM kubernetes_user u
+    INNER JOIN kubernetes_passwd p ON p.user_id = u.id
+    WHERE u.username = ?
+    LIMIT 1
+  password_mode: plaintext
+
+cors:
+  allowed_origins:
+    - "*"
+
+kubeconfig:
+  max_upload_size_mb: 10
