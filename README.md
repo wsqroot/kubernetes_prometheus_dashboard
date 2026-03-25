@@ -1,0 +1,4 @@
+# kubernetes_prometheus_dashboard
+第一版本实现如下功能：
+1、可以创建各种kubernetes各种资源对象
+2、可以管理多个kubernetes集群资源
